@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard_Master.Master.cs" Inherits="Asp_Registration_Form.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>   
+  
+    <title>
+          <asp:ContentPlaceHolder ID="title" runat="server">
+          </asp:ContentPlaceHolder> 
+    </title>
+    <link href="Css/Dashboard_master.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+        </asp:ContentPlaceHolder>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+   </script>
+</head>
+<body>
+       
+    <form id="form1" runat="server" style="background-color:#f2f2f2">
+            <div class="w3-container" style=" background-color:#f2f2f2; position:absolute; padding-bottom:5px; margin-top:5px; margin-left:1px;">
+                 <img src="Images/Mainlogo-gray.png" width="180" height="50"  />                          
+            </div>
+            <div class="w3-right" style="padding-top:9px; padding-right:10px ">
+                <i class="fa fa-lg fa-user"></i>
+                <a runat="server" class="w3-button w3-blue w3-border w3-border-Blue w3-round-large" href="Login.aspx" onclick="Login.aspx"><i class="fa fa-sign-out"></i>Logout</a>
+            </div>                     
+            <section style="padding-top:60px">
+                <div class="topnav" id="myTopnav">           
+                <a href="Dashboard.aspx" onclick="Dashboard.aspx" class="active">Dashboard</a>
+               
+                <div class="dropdown">
+                    <button class="dropbtn">CompanyPanel
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="View_Company.aspx" onclick="View_Company.aspx">View Subsidiary Company</a>
+                        <a href="Add_subsidiary_Company.aspx" onclick="Add_subsidiary_Company.aspx">Add Subsidiary Company</a>
+                        <a href="View_Functional_Domain.aspx" onclick="View_Functional_Domain.aspx" >View Functional Domain</a>                       
+                        <a href="Add_Functional_Domain.aspx" onclick="Add_subsidiary_Company.aspx">Add Functional Domain</a>
+                        <a href="Domain_Mapping.aspx" onclick="Domain_Mapping.aspx" >Domain Mapping</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                   <button class="dropbtn">Manage User
+                        <i class="fa fa-caret-down"></i>
+                   </button>
+                    <div class="dropdown-content">
+                        <a href="#">Company Panel</a>
+                        <a href="#">BPM Panel</a>
+                        <a href="#">DMS Panel</a>
+                    </div>
+                </div>
+                    <div class="dropdown">
+                   <button class="dropbtn">BPM Panel
+                        <i class="fa fa-caret-down"></i>
+                   </button>
+                    <div class="dropdown-content">
+                        <a href="#">Company Panel</a>
+                        <a href="#">BPM Panel</a>
+                        <a href="#">DMS Panel</a>
+                    </div>
+                </div>
+                   <div class="dropdown">
+                   <button class="dropbtn">DMS Panel
+                        <i class="fa fa-caret-down"></i>
+                   </button>
+                    <div class="dropdown-content">
+                        <a href="#">Company Panel</a>
+                        <a href="#">BPM Panel</a>
+                        <a href="#">DMS Panel</a>
+                    </div>
+                       
+                </div>
+                </div>
+                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="mufunction()"></a>
+                <div style="padding-left:16px">
+                    <h2></h2>
+                </div>
+        </section>
+
+                    
+            <div class="content">
+                    <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                
+                </asp:ContentPlaceHolder>
+            </div>
+            
+            <div class="footer">
+                <h2>
+                    Copyrights@ABC.com
+                </h2>
+            </div>   
+                             
+    </form>
+    </body>
+</html>

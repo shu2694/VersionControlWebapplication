@@ -1,0 +1,71 @@
+﻿ *{
+    margin:0;
+    padding:0;
+}
+section{
+    background-image:url('../Images/website-design-background%201.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.Main_Logo .Main_Logo_image {
+    position: absolute; 
+    margin:0 auto;
+    top: 8px;
+    left:70px;
+    right:70px;
+}
+.login_container{
+    width:35vw;
+    height:57vh;
+    border-radius:25px;
+    border:2px solid #73AD21;
+    background-color:antiquewhite;
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:relative;
+    text-align:center;
+}
+h3{
+    font-size:2.5vw;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    margin-bottom:13%;
+    margin-top:6%;
+ 
+}
+input[type=text],input[type=password]{
+    width:97%;
+    height:10%;
+    margin-bottom:3%;
+    background-color:transparent;
+    margin-left:4px;
+    margin-right:4px;   
+}
+input[placeholder]{
+    font-size:1.4vw;
+    padding-left:3%;
+    font-family:'Crete Round';
+}
+.Forgot_password_link{
+    font-size:medium;
+    font-family:'Pacifico';
+    color:blue;
+    text-decoration-line:underline;
+    height:auto;
+    width:auto;
+    margin-right:8px;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+.Login_button{
+    margin-left:4px;
+    margin-right:4px;
+    margin-top:10px;
+    width:97%;
+    height:10%;
+    padding-bottom:10px;
+}

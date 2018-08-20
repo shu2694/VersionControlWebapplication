@@ -1,0 +1,96 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+section{
+    background-image:url('../Images/website-design-background%201.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100vw;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+}
+.Main_Logo .Main_Logo_image {
+    position: absolute; 
+    margin:0 auto;
+    top: 8px;
+    left:70px;
+    right:70px;
+    font-size: 18px;
+}
+.container{
+    width:530px;
+    height:67vh;
+    top: 113px;
+    left:442px;
+    right:442px;
+    background-color:antiquewhite;
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:absolute;  
+}
+h3{
+    font-size:2.5vw;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    margin-bottom:5%;
+    margin-top:3.5%;
+    text-align:center;
+}
+input[type=text],input[type=password]{
+    width:95%;
+    height:10%;
+    margin-bottom:2%;
+    background-color:transparent;
+    margin-left:10px;
+    margin-right:3px;
+}
+input[placeholder]{
+    font-size:1.4vw;
+    padding-left:2%;
+    font-family:'Crete Round';
+}
+Sign_In_link{
+    font-size:small;
+    font-family:'Pacifico';
+    color:blue;     
+}
+.btn_sign_up{
+  padding: 15px 35px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+  margin-top:3%;
+}
+.btn_sign_up:hover {background-color:#3e8e41}
+
+.btn_sign_up:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.btn_cancel{
+  padding: 15px 35px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+}
+.btn_cancel:hover {background-color:#3e8e41}
+
+.btn_cancel:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

@@ -1,0 +1,52 @@
+﻿#domain_view, #roles_view, #users_view, #document_view{
+    width: 250px;
+    height:145px;
+    padding: 0;
+    display:inline-block;
+    border: 1px solid grey;
+    border-radius:10px;
+    margin-top:5px;
+    margin-left:15px;
+    margin-right:10px;
+    box-shadow: 5px 10px #888888;
+}
+#profile_view{
+    width: 210px;
+    height:145px;
+    padding: 0;
+    display:inline-block;
+    border: 1px solid black;
+    border-radius:10px;
+    margin-top:5px;
+    margin-right:20px;
+    box-shadow: 5px 10px #6B6260;
+}
+#domain_view_label,#roles_view_label,#users_view_label,#documents_view_label{
+    font-size:25px;
+    font-family:'Times New Roman';
+    color:darkblue;
+}
+label{
+    margin-left:5px;
+    font-family:'Times New Roman';
+}
+#data_summary{
+    width: 800px;
+    height:300px;
+    padding: 0;
+    display:inline-block;
+    border: 1px solid black;
+    margin-top:15px;
+    margin-left:15px;
+    margin-right:10px;   
+}
+#document_class_view{
+    width: 400px;
+    height:320px;
+    padding: 0;
+    display:inline-block;
+    border: 1px solid black;
+    margin-top:15px;
+    margin-left:15px;
+    margin-right:40px; 
+}

@@ -1,0 +1,20 @@
+﻿.domain_section {
+background-color:floralwhite;
+background-repeat: no-repeat;
+background-size: cover;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.domain_container{
+width:40vw;
+height:45vh;
+background-color:blanchedalmond;
+background-size:contain;
+background-repeat:no-repeat;
+position:relative;
+text-align:center;
+}
+
