@@ -1,0 +1,47 @@
+﻿.domain_mapping_container{
+    width:70vw;
+    height:60vh;
+    background-color:white;
+    margin-left:190px;
+    position:relative;
+    margin-top:10px;
+}
+.domain_header{
+    width:70vw;
+    margin-left:190px;
+}
+#company_lbl{
+    font-size:17px;
+    font-family:cursive; 
+    color:darkblue; 
+    font-weight:bold;
+    margin-left:10px;
+}
+#domain_lbl{
+    font-family:cursive;
+    font-size:17px;
+    color:darkblue;
+    font-weight:bold;
+    margin-left:10px;
+}
+#domain_list_unmapped{
+    width: 250px;
+    height:190px;
+    display:inline-block;
+    border: 1px solid grey;
+    border-radius:1px;
+    margin-left:15px;
+    margin-right:70px;
+}
+#domain_list_mapped{
+    width: 250px;
+    height:190px;
+    display:inline-block;
+    border: 1px solid grey;
+    border-radius:1px;
+    margin-left:15px;
+    margin-right:10px;
+}
+#company_dropdown{
+    margin-left:30px;
+}

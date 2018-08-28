@@ -63,6 +63,7 @@
     <Content Include="Css\Add_subsidiary_company.css" />
     <Content Include="Css\Dashboard.css" />
     <Content Include="Css\Dashboard_master.css" />
+    <Content Include="Css\Domain_mapping.css" />
     <Content Include="Css\Forgot_password.css" />
     <Content Include="Css\Login.css" />
     <Content Include="Dashboard.aspx" />
