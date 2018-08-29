@@ -8,7 +8,69 @@
     <title>Registration Form</title>
 
     <link href="Css/Registration.css" rel="stylesheet"/>
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
+    <script type="text/javascript">
+        function usernameAvailability(){
+            $.ajax({
+                type:"Post",
+                url: "Registration.aspx/checkusername",
+                data:'{Username:"' + $("#<%=txturname.ClientID%>")[0].value + '"}',
+                contentType: "application/json; charset=utf-8",  
+                dataType: "json",  
+                success: OnSuccess,  
+                failure: function (response) {  
+                    alert(response);  
+                }  
+            });
+        }
+        //function Onsuccess
+        function OnSuccess(response) {
+            var msg = $("#<%=username_status.ClientID%>")[0];
+            switch (response.d) {
+                case "true":
+                    msg.style.display = "block";
+                    msg.style.color = "red";
+                    msg.innerHTML = "Username already Exists";
+                    break;
+                case "false":
+                    msg.style.display = "block";
+                    msg.style.color = "green";
+                    msg.innerHTML = "Username is available";
+                    break;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function EmailAvailability() {
+            $.ajax({
+                type: "Post",
+                url: "Registration.aspx/checkemail",
+                data: '{Email:"' + $("#<%=txtemail.ClientID%>")[0].value + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: OnSuccessemail,
+                    failure: function (response) {
+                        alert(response);
+                    }
+                });
+            }
+            //function Onsuccess
+            function OnSuccessemail(response) {
+                var msg = $("#<%=email_status.ClientID%>")[0];
+                switch (response.d) {
+                    case "true":
+                        msg.style.display = "block";
+                        msg.style.color = "red";
+                        msg.innerHTML = "Email already Exists";
+                        break;
+                    case "false":
+                        msg.style.display = "block";
+                        msg.style.color = "green";
+                        msg.innerHTML = "Email is available";
+                        break;
+                }
+            }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/family=Bitter|Crete+Round|Pacifico');        
     </style>
@@ -22,26 +84,26 @@
              <div class="container">
                   <div>
                    <h3>Sign up</h3>
-                         <div class="w3-center">
+                         <div>
                             <asp:TextBox ID="txturname" CssClass="w3-input w3-border w3-round-large" placeholder="Username" 
-                            runat="server" required="required" ></asp:TextBox>
-
-                            
+                            onchange="usernameAvailability()" runat="server" required="required" ></asp:TextBox>      
+                            <asp:Label CssClass="w3-left" ID="username_status" runat="server"></asp:Label>
                            
                             <asp:TextBox ID="txtemail" CssClass="w3-input w3-border w3-round-large" placeholder="E-mail" 
-                            runat="server" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            runat="server" onchange="EmailAvailability()" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                             title="Please enter correct email format Ex:- abc@example.com"></asp:TextBox>
                            
+                            <asp:Label CssClass="w3-left" ID="email_status" runat="server"></asp:Label>
                             
                             
-                            <asp:TextBox ID="txtpasswd"  title="Password contain min 6 character" CssClass="w3-input 
-                            w3-border w3-round-large" Name="pwd1" placeholder="Password" TextMode="Password" runat="server" 
+                            <asp:TextBox ID="txtpasswd" CssClass="w3-input w3-border w3-round-large" Name="pwd1" 
+                            placeholder="Password" TextMode="Password" runat="server" 
                             required="required"></asp:TextBox> 
                            
                             
                             
-                            <asp:TextBox ID="txtcop" title="Please enter the same password as above" CssClass="w3-input 
-                            w3-border w3-round-large" placeholder="Confirm Password" Name="pwd2" TextMode="Password" 
+                            <asp:TextBox ID="txtcop" CssClass="w3-input w3-border w3-round-large" 
+                            placeholder="Confirm Password" Name="pwd2" TextMode="Password" 
                             runat="server" required="required"></asp:TextBox>
                             
                             

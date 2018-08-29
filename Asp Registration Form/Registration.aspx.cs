@@ -25,15 +25,11 @@ namespace Asp_Registration_Form
                 con.Open();
                 string command = "INSERT INTO [dbo.registration](Username,Email,Password)VALUES(@Username,@Email,@Password)";   
                 SqlCommand cmd = new SqlCommand(command, con);
-
-
                 cmd.Parameters.AddWithValue("@Username",txturname.Text);
                 cmd.Parameters.AddWithValue("@Email", txtemail.Text);
                 cmd.Parameters.AddWithValue("@Password", txtpasswd.Text);
                 cmd.ExecuteNonQuery();
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-                  
-
             }
             catch(Exception)
             {
@@ -53,7 +49,43 @@ namespace Asp_Registration_Form
             txtemail.Text = "";
             txtpasswd.Text = "";
         }
-
-        
+        [System.Web.Services.WebMethod]
+        public static string checkusername(string Username)
+        {
+            string retval = "";
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["demo ApplicationConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select Username from [dbo.registration] where Username=@Username", con);
+            cmd.Parameters.AddWithValue("@Username", Username);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if(dr.HasRows)
+            {
+                retval = "true";
+            }
+            else
+            {
+                retval = "false";
+            }
+            return retval;
+        }
+        [System.Web.Services.WebMethod]
+        public static string checkemail(string Email)
+        {
+            string retval = "";
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["demo ApplicationConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select Email from [dbo.registration] where Email=@Email", con);
+            cmd.Parameters.AddWithValue("@Email", Email);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                retval = "true";
+            }
+            else
+            {
+                retval = "false";
+            }
+            return retval;
+        }
     }
 }

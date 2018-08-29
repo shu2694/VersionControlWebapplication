@@ -12,15 +12,15 @@
 }
 #company_lbl{
     font-size:17px;
-    font-family:cursive; 
-    color:darkblue; 
+    font-family:Arial; 
+    color:yellow;
     font-weight:bold;
     margin-left:10px;
 }
 #domain_lbl{
     font-family:cursive;
     font-size:17px;
-    color:darkblue;
+    color:blue;
     font-weight:bold;
     margin-left:10px;
 }

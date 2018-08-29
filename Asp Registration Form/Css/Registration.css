@@ -21,7 +21,7 @@ section{
 }
 .container{
     width:530px;
-    height:67vh;
+    height:70vh;
     top: 113px;
     left:442px;
     right:442px;
@@ -40,10 +40,10 @@ h3{
 input[type=text],input[type=password]{
     width:95%;
     height:10%;
-    margin-bottom:2%;
     background-color:transparent;
     margin-left:10px;
     margin-right:3px;
+    margin-bottom:2%;
 }
 input[placeholder]{
     font-size:1.4vw;
@@ -93,4 +93,7 @@ Sign_In_link{
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+#username_status,#email_status{
+    margin-left:10px;  
 }

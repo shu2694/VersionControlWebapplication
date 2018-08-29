@@ -8,10 +8,20 @@
   <title>Login Form</title>
 
     <link href="Css/Login.css" rel="stylesheet"/>
-
+    
     <style>
         @import url('https://fonts.googleapis.com/family=Bitter|Crete+Round|Pacifico');
     </style>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("txtpasswd");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+     </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,15 +31,17 @@
             </div>
                 <div class="login_container"> 
                     <div>                  
-                         <h3>Login</h3>
-                         <div class="w3-center">
+                         <h3 class="w3-center">Login</h3>
+                         <div>
                              <asp:TextBox ID="txturname" class="w3-input w3-border w3-round-large" placeholder="Username" 
                              runat="server" required="required"></asp:TextBox>
-                             
-                             <asp:TextBox ID="txtpasswd" class="w3-input w3-border w3-round-large" pattern="[a-z0-9]{6}" title="Must contain at least one number and one uppercase 
-                             and lowercase letter, and at least 8 or more characters" placeholder="Password" 
+                             <asp:TextBox ID="txtpasswd" class="w3-input w3-border w3-round-large" placeholder="Password" 
                              TextMode="Password" runat="server" required="required" ></asp:TextBox>
+                             <div class="passwd_show w3-right">
+                                 <input type="checkbox" onclick="myFunction()"/>Show Password
                              </div>
+                             </div>
+                            <br />
                              <div class="w3-right">
                                   <asp:hyperlink ID="Forgot_Password" class="Forgot_password_link" NavigateUrl="~/Forgot_password.aspx"  runat="server" >Forgot Password?</asp:hyperlink>
                                  </div>

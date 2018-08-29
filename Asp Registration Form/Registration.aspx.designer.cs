@@ -31,6 +31,15 @@ namespace Asp_Registration_Form {
         protected global::System.Web.UI.WebControls.TextBox txturname;
         
         /// <summary>
+        /// username_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label username_status;
+        
+        /// <summary>
         /// txtemail control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Asp_Registration_Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemail;
+        
+        /// <summary>
+        /// email_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label email_status;
         
         /// <summary>
         /// txtpasswd control.
