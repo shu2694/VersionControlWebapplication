@@ -14,7 +14,7 @@ namespace Asp_Registration_Form
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
        protected void Button1_Click(object sender, EventArgs e)
         {
@@ -28,8 +28,9 @@ namespace Asp_Registration_Form
                 cmd.Parameters.AddWithValue("@Username",txturname.Text);
                 cmd.Parameters.AddWithValue("@Email", txtemail.Text);
                 cmd.Parameters.AddWithValue("@Password", txtpasswd.Text);
+                
                 cmd.ExecuteNonQuery();
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+                
             }
             catch(Exception)
             {
@@ -37,6 +38,7 @@ namespace Asp_Registration_Form
             }
             finally
             {
+                
                 Response.Redirect("Login.aspx");
                 con.Close();
             }
@@ -87,5 +89,6 @@ namespace Asp_Registration_Form
             }
             return retval;
         }
+        
     }
 }

@@ -13,12 +13,21 @@ namespace Asp_Registration_Form {
     public partial class Domain_Mapping {
         
         /// <summary>
-        /// Company control.
+        /// unmapped_listview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Company;
+        protected global::System.Web.UI.WebControls.ListView unmapped_listview;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

@@ -30,7 +30,6 @@ namespace Asp_Registration_Form
             
             if(verify>0)
             {
-                
                 Response.Redirect("Dashboard.aspx");
             }
             else

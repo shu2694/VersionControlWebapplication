@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Asp_Registration_Form
 {
-    public partial class Add_User : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
