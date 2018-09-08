@@ -86,8 +86,10 @@
                    <h3>Sign up</h3>
                          <div>
                             <asp:TextBox ID="txturname" CssClass="w3-input w3-border w3-round-large" placeholder="Username" 
-                            onchange="usernameAvailability()" runat="server" required="required" ></asp:TextBox>      
+                            onchange="usernameAvailability()" runat="server" required="required" ></asp:TextBox>
                             <asp:Label CssClass="w3-left" ID="username_status" runat="server"></asp:Label>
+                            
+                             
                            
                             <asp:TextBox ID="txtemail" CssClass="w3-input w3-border w3-round-large" placeholder="E-mail" 
                             runat="server" onchange="EmailAvailability()" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
@@ -105,6 +107,13 @@
                             <asp:TextBox ID="txtcop" CssClass="w3-input w3-border w3-round-large" 
                             placeholder="Confirm Password" Name="pwd2" TextMode="Password" 
                             runat="server" required="required"></asp:TextBox>
+                            &nbsp;&nbsp;
+                            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                            ControlToValidate="txtcop"
+                            CssClass="ValidationError"
+                            ErrorMessage="Password do not Match"
+                            ControlToCompare="txtpasswd"
+                            ToolTip="Password must be the same"    />
                             
                             
                          </div>

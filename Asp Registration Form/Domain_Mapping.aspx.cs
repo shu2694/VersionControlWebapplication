@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-
 namespace Asp_Registration_Form
 {
 
@@ -16,7 +15,14 @@ namespace Asp_Registration_Form
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
+
+        protected void unmapped_listview_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+
+        }
+
     }
 }
+       

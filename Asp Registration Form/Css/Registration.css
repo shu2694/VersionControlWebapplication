@@ -25,6 +25,8 @@ section{
     top: 113px;
     left:442px;
     right:442px;
+    border-radius:25px;
+    border:2px solid grey;
     background-color:antiquewhite;
     background-size:contain;
     background-repeat:no-repeat;
@@ -95,5 +97,6 @@ Sign_In_link{
   transform: translateY(4px);
 }
 #username_status,#email_status{
-    margin-left:10px;  
+   margin-left:10px
 }
+
