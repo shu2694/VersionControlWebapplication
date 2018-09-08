@@ -58,8 +58,8 @@
                         <i class="fa fa-caret-down"></i>
                    </button>
                     <div class="dropdown-content">
-                        <a href="#">Company Panel</a>
-                        <a href="#">BPM Panel</a>
+                        <a href="Add_Internal_User.aspx" onclick="Add_Internal_User.aspx">Add User</a>
+                        <a href="#">Add External User</a>
                         <a href="#">DMS Panel</a>
                     </div>
                 </div>
