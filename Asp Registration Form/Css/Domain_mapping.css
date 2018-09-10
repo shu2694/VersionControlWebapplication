@@ -17,21 +17,32 @@
     font-weight:bold;
     margin-left:10px;
 }
-#domain_lbl{
+hr{
+    display:block;
+    border-style: inset;
+    border-width:1px;
+    margin-left:10px;
+    margin-right:10px;
+}
+#unmapped_domain_lbl{
     font-family:Arial;
-    font-size:17px;
+    font-size:15px;
     color:black;
     font-weight:bold;
-    margin-left:10px;
+    margin-right:330px;    
+}
+#mapped_domain_lbl{
+    font-family:Arial;
+    font-size:15px;
+    color:black;
+    font-weight:bold;   
 }
 #domain_list_unmapped{
     width: 250px;
     height:190px;
     display:inline-block;
     border: 1px solid grey;
-    border-radius:1px;
-    margin-left:15px;
-    margin-right:70px;
+    border-radius:1px;   
     overflow:scroll;
     text-align:left;
 }
@@ -40,9 +51,14 @@
     height:190px;
     display:inline-block;
     border: 1px solid grey;
-    border-radius:1px;
-    margin-left:15px;
-    margin-right:10px;
+    border-radius:1px;   
+    overflow:scroll;
+    text-align:left;
+}
+#btn_group{
+    display:inline-block;
+    margin-right:20px;
+    margin-left:20px;
 }
 #company_dropdown{
     width:300px;

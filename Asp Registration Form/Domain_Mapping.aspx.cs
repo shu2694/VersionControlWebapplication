@@ -18,11 +18,7 @@ namespace Asp_Registration_Form
 
         }
 
-        protected void unmapped_listview_ItemDataBound(object sender, ListViewItemEventArgs e)
-        {
-
-        }
-
+        
     }
 }
        

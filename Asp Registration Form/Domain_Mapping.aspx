@@ -6,6 +6,44 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="server">
 <link href="Css/Domain_mapping.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $("#company_dropdown").removeData();
+            Greating();
+        });
+
+        function Greating() {
+
+            $.ajax({
+
+                type: "POST",
+                url: "WebService1.asmx/GetAllcompany",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    var cmpny = response.d;
+                    $.each(cmpny, function (cmpny) {
+
+                        $("#company_dropdown").append("<option> '"+ cmpny +"' </option>)");
+                    });
+
+                    console.log(response);
+                },
+
+                error: function (response) {
+                    $("#company_dropdown").append("<option>error</option>");
+
+                    console.log(response);
+                }
+            });
+        }
+    </script>
     <section>
         <div class="domain_header w3-container w3-card-4" style="background-color:aquamarine">
             <h3 style="font-family:cursive">
@@ -16,81 +54,23 @@
                 <div>
                     <label id="company_lbl">Select Organisation:</label>                    
                         <select id="company_dropdown" name="company_dropdown">
-                        <option value="0">--Please select Company--</option>
-                        <option value="1">CRAI</option>
-                    </select>
+
+                        </select>
                 </div>
-                 <div>
-                    <label id="domain_lbl">Functional Domain</label>
-                    <br />
-                    <div class="w3-center">
+                <hr/>
+                <div class="w3-center">
+                     <div style="margin-top:15px;">
+                        <label id="unmapped_domain_lbl">Unmapped Domain</label>
+                        <label id="mapped_domain_lbl">Mapped Domain</label>
+                     </div>
+                    <div style="margin-top:10px;">
                         <div id="domain_list_unmapped">
-                            <asp:ListView ID="unmapped_listview" runat="server" OnItemDataBound="unmapped_listview_ItemDataBound" DataSourceID="SqlDataSource1">
-                                <AlternatingItemTemplate>
-                                    <tr style="">
-                                        <td>
-                                            <asp:Label Text='<%# Eval("Functional_Domain_Name") %>' runat="server" ID="Functional_Domain_NameLabel" /></td>
-                                    </tr>
-                                </AlternatingItemTemplate>
-                                <EditItemTemplate>
-                                    <tr style="">
-                                        <td>
-                                            <asp:Button runat="server" CommandName="Update" Text="Update" ID="UpdateButton" />
-                                            <asp:Button runat="server" CommandName="Cancel" Text="Cancel" ID="CancelButton" />
-                                        </td>
-                                        <td>
-                                            <asp:TextBox Text='<%# Bind("Functional_Domain_Name") %>' runat="server" ID="Functional_Domain_NameTextBox" /></td>
-                                    </tr>
-                                </EditItemTemplate>
-                                <EmptyDataTemplate>
-                                    <table runat="server" style="">
-                                        <tr>
-                                            <td>No data was returned.</td>
-                                        </tr>
-                                    </table>
-                                </EmptyDataTemplate>
-                                <InsertItemTemplate>
-                                    <tr style="">
-                                        <td>
-                                            <asp:Button runat="server" CommandName="Insert" Text="Insert" ID="InsertButton" />
-                                            <asp:Button runat="server" CommandName="Cancel" Text="Clear" ID="CancelButton" />
-                                        </td>
-                                        <td>
-                                            <asp:TextBox Text='<%# Bind("Functional_Domain_Name") %>' runat="server" ID="Functional_Domain_NameTextBox" /></td>
-                                    </tr>
-                                </InsertItemTemplate>
-                                <ItemTemplate>
-                                    <tr style="">
-                                        <td>
-                                            <asp:Label Text='<%# Eval("Functional_Domain_Name") %>' runat="server" ID="Functional_Domain_NameLabel" /></td>
-                                    </tr>
-                                </ItemTemplate>
-                                <LayoutTemplate>
-                                    <table runat="server">
-                                        <tr runat="server">
-                                            <td runat="server">
-                                                <table runat="server" id="itemPlaceholderContainer" style="" border="0">
-                                                    <tr runat="server" style="">
-                                                        <th runat="server">Functional_Domain_Name</th>
-                                                    </tr>
-                                                    <tr runat="server" id="itemPlaceholder"></tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                        <tr runat="server">
-                                            <td runat="server" style=""></td>
-                                        </tr>
-                                    </table>
-                                </LayoutTemplate>
-                                <SelectedItemTemplate>
-                                    <tr style="">
-                                        <td>
-                                            <asp:Label Text='<%# Eval("Functional_Domain_Name") %>' runat="server" ID="Functional_Domain_NameLabel" /></td>
-                                    </tr>
-                                </SelectedItemTemplate>
-                            </asp:ListView>
-                            <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:demo ApplicationConnectionString %>' SelectCommand="SELECT [Functional Domain Name] AS Functional_Domain_Name FROM [View_Functional_Domain]"></asp:SqlDataSource>
+                                             
                         </div>
+                        <div id="btn_group" >
+                            <asp:Button ID="mapped_btn" CssClass="w3-btn w3-green w3-border w3-border-black w3-round-medium" runat="server" Text="Map" />
+                            <asp:Button ID="unmapped_btn" CssClass="w3-btn w3-brown w3-border w3-border-black w3-round-medium" runat="server" Text="Unmap" />
+                        </div> 
                         <div id="domain_list_mapped">
                  
                         </div>
