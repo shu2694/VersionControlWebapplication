@@ -8,7 +8,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Text;
-
 namespace Asp_Registration_Form
 {
     public partial class View_Company : System.Web.UI.Page
@@ -62,7 +61,7 @@ namespace Asp_Registration_Form
                     htmltable.Append("</tr>");  
                 }  
             }  
-        }  
+        }
     }  
 }  
         

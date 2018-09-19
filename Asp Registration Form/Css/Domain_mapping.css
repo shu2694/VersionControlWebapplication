@@ -82,4 +82,7 @@ hr{
     background-size: 1px 100%, 20px 20px, 20px 20px, 20px 60%;
     background-position: right 20px center, right bottom, right bottom, right bottom;
 }
-
+#functionaldomaincheckboxlbl{
+    font-family:'Arial Rounded MT';
+    font-size:medium;
+}

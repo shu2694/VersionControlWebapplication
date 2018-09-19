@@ -19,7 +19,7 @@
                     var company_dropdown = $("[id*=company_dropdown]");
                     company_dropdown.empty().append('<option selected="selected" value="0">---Please select Company---</option>');
                     $.each(r.d, function () {
-                        company_dropdown.append($("<option></option>").val(this['Value']).html(this['Text']));
+                        company_dropdown.append($("<option></option>").html(this['Text']));
                     });
                 }
             });
@@ -27,17 +27,29 @@
     </script>
     <script type="text/javascript">
         $(function () {
+            var row = "";
             $.ajax({
                 type: "POST",
                 url: "Domain_Mapping.aspx/getfunctionaldomain",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
-                datatype: "json",
-                success: function (r) {
-                    var lable = $("[id*=unmapped_domain_checklist1]");
-                    $.each(r.d, function () {
-                        lable.append($("<lable></lable>").html(this['Text']));
+                dataType: "json",
+                success: function (msg) {
+                    $.each(msg.d, function (index, obj) {
+                        row += "<tr><td><lable id='functionaldomaincheckboxlbl'><input id='checkboxlist' type=checkbox>" + obj.Text + "</lable></td></tr>";
                     });
+                    $("#unmapped_domain_tbl").append(row);
+                }           
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.selectallcheckbox').click(function () {
+                if ($(this).is(':checked')) {
+                    $('div input').attr('checked', true);
+                } else {
+                    $('div input').attr('checked', false);
                 }
             });
         });
@@ -52,7 +64,7 @@
                 <div>
                     <label id="company_lbl">Select Organisation:</label>                    
                         <select id="company_dropdown" name="company_dropdown">
-
+                           
                         </select>
                 </div>
                 <hr/>
@@ -63,13 +75,12 @@
                      </div>
                     <div style="margin-top:10px;">
                         <div id="domain_list_unmapped">
-                           <table id="unmapped_domain_tbl" border="0">
+                           <table class="w3-table-all w3-card-2" id="unmapped_domain_tbl" border="0">
                                <tbody>
-                                   <tr>
+                                   <tr> 
                                        <td>
-                                           <input id="unmapped_domain_checklist" type="checkbox" />
-                                           <label for="unmapped_domain_checklist1"></label>
-                                       </td>
+                                            <asp:Label style="font-family:'Arial Rounded MT';font-size:medium" runat="server"><input name="sample" class="selectallcheckbox" type="checkbox"/>Select All</asp:Label>
+                                       </td>                            
                                    </tr>
                                </tbody>
                            </table>
@@ -79,7 +90,7 @@
                             <asp:Button ID="unmapped_btn" CssClass="w3-btn w3-brown w3-border w3-border-black w3-round-medium" runat="server" Text="Unmap" />
                         </div> 
                         <div id="domain_list_mapped">
-                 
+                            
                         </div>
                    </div>                    
                 </div>
