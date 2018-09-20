@@ -67,6 +67,7 @@
     <Content Include="Css\Domain_mapping.css" />
     <Content Include="Css\Forgot_password.css" />
     <Content Include="Css\Login.css" />
+    <Content Include="Css\View_Company.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Domain_Mapping.aspx" />
     <Content Include="Forgot_password.aspx" />

@@ -16,7 +16,17 @@
                        </td>                        
                     </tr>
                 </table>
-            </div>          
+            </div>   
+        <div>
+            <table id="ddl">
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>      
+        <input type="button" onclick="disable_click" style="background-color:blue" /> 
     </section>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:demo ApplicationConnectionString %>" 
             SelectCommand="SELECT * FROM [Create_company]"></asp:SqlDataSource>

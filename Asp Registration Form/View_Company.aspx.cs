@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.Services;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Text;
@@ -49,8 +50,12 @@ namespace Asp_Registration_Form
                         htmltable.Append("<td>" + ds.Tables[0].Rows[i]["Contact no"] + "</td>");  
                         htmltable.Append("<td>" + ds.Tables[0].Rows[i]["Contact Person"] + "</td>");  
                         htmltable.Append("<td>" + ds.Tables[0].Rows[i]["Email"] + "</td>");
+                        htmltable.Append("<td><input id='editbtn' style='background-color:blue' type='button' value='Edit'/>" + ds.Tables[0].Rows[i]["IsEdit"] + "</td>");
+                        htmltable.Append("<td><input id='deletebtn'  type='button' value='Delete'/>" + ds.Tables[0].Rows[i]["IsDelete"] + "</td>");
+                        htmltable.Append("<td><input id='enablebtn' style='background-color:blue' type='button' value='Enable'/>" + ds.Tables[0].Rows[i]["IsEnable"] + "</td>");
+                        htmltable.Append("<td><input id='disablebtn' style='background-color:blue' type='button' value='Disable'/>" + ds.Tables[0].Rows[i]["IsDisable"] + "</td>");
                         htmltable.Append("</tr>"); 
-                    }  
+                    }
                     htmltable.Append("</table>");  
                     dbplaceholder.Controls.Add(new Literal { Text = htmltable.ToString() });  
                 }  
