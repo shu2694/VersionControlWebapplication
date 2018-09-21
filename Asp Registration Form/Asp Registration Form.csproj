@@ -85,6 +85,7 @@
     </Content>
     <Content Include="WebForm1.aspx" />
     <Content Include="Add_Internal_User.aspx" />
+    <Content Include="View_Company.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add_Functional_Domain.aspx.cs">
@@ -171,6 +172,10 @@
     </Compile>
     <Compile Include="Add_Internal_User.aspx.designer.cs">
       <DependentUpon>Add_Internal_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Company.asmx.cs">
+      <DependentUpon>View_Company.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

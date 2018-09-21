@@ -13,21 +13,39 @@ namespace Asp_Registration_Form {
     public partial class View_Company {
         
         /// <summary>
-        /// dbplaceholder control.
+        /// editbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder dbplaceholder;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton editbtn;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// deletebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton deletebtn;
+        
+        /// <summary>
+        /// enablebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton enablebtn;
+        
+        /// <summary>
+        /// disablebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton disablebtn;
     }
 }
