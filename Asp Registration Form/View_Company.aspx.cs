@@ -18,10 +18,7 @@ namespace Asp_Registration_Form
         {
            
         }
-        protected void edit_click(object sender,EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
+
     }  
 }  
         
